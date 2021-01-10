@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+<!--    注册平台事物管理器-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="myDataSource"/>
+    </bean>
+
+<!--    注册事物通知-->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+<!--        注册指定连接点-->
+        <tx:attributes>
+            <tx:method name="add*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="remove*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="delete*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="
+
+
+
+
+
+
+
+
+
+
+            *" propagation="REQUIRED" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+</beans>
