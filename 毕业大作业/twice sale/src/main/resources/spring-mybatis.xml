@@ -5,7 +5,7 @@
 
 <!--    注册sqlSessionFactory的对象-->
     <bean id="mySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-<!--        在ds.xml里配置数据源-->
+<!--        在ds.xml里配置的数据源-->
         <property name="dataSource" ref="myDataSource"/>
 
         <property name="configLocation" value="classpath:mybatis.xml"/>
